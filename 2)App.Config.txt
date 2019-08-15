@@ -1,0 +1,28 @@
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.Run(async (context) => { await context.Response.WriteAsync("dev"); });
+            }
+            if (env.IsProduction())
+            {
+                app.Run(async (context) => { await context.Response.WriteAsync("isProduction"); });
+            }
+
+            app.UseStaticFiles();
+            app.UseDeveloperExceptionPage();
+            app.UseStatusCodePages();
+            app.UseMvcWithDefaultRoute();
+
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
+        }

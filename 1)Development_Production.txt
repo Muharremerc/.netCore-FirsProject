@@ -1,0 +1,8 @@
+  if (env.IsDevelopment())
+            {
+                app.Run(async (context) => { await context.Response.WriteAsync("dev"); });
+            }
+            if (env.IsProduction())
+            {
+                app.Run(async (context) => { await context.Response.WriteAsync("isProduction"); });
+            }

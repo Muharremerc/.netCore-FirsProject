@@ -1,0 +1,13 @@
+﻿@model Drink
+
+<div>
+    <h4>
+        Drink Name : @Model.Name
+    </h4>
+    <p>Price : @Model.Price</p>
+    <p>@Model.ShortDescription</p>
+
+    <div>
+        <a id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.Id">add To Cart</a>
+    </div>
+</div>

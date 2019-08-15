@@ -1,0 +1,16 @@
+﻿@using DrinkETic.ViewModels
+@model DrinksListViewModel
+
+<div>
+    <h2>@Model.CurrentCategory</h2>
+</div>
+
+@{
+
+    foreach (Drink item in Model.Drinks)
+    {
+       
+        @Html.Partial("DrinkSummary",item)
+    }
+
+}
